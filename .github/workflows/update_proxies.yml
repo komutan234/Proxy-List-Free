@@ -2,7 +2,7 @@ name: Update Proxy List
 
 on:
   schedule:
-    # Runs every 10 minutes
+    # Runs every 1minutes
     - cron: '*/1 * * * *'
   workflow_dispatch: 
 
