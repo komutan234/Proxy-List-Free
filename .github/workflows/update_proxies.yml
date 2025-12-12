@@ -2,7 +2,8 @@ name: Update Proxy List
 
 on:
   schedule:
-    - cron: '0 */2 * * *'
+    # Runs every 10 minutes
+    - cron: '*/10 * * * *'
   workflow_dispatch: 
 
 jobs:
@@ -10,26 +11,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Repoyu Çek (Checkout)
+      - name: Checkout Repo
         uses: actions/checkout@v3
 
-      - name: Python Kurulumu
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
-      - name: Kütüphaneleri Yükle
+      - name: Install Requirements
         run: |
           pip install -r requirements.txt
 
-      - name: Scraper'ı Çalıştır
+      - name: Run Scraper
         run: python scraper.py
 
-      - name: Değişiklikleri Commit ve Push Yap
+      - name: Commit and Push Changes
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add proxies/*.txt
-          # Eğer değişiklik yoksa hata vermemesi için mantık:
-          git commit -m "Otomatik Proxy Güncellemesi - $(date)" || echo "Değişiklik yok"
+          # Logic to prevent error if no changes exist
+          git commit -m "Auto Proxy Update - $(date)" || echo "No changes to commit"
           git push
