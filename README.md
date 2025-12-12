@@ -5,13 +5,13 @@
 ![Build Status](https://github.com/komutan234/Proxy-List-Free/actions/workflows/update_proxies.yml/badge.svg)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
-> A completely automated, free proxy list repository. Scraped from public sources, validated, and updated every 2 hours via GitHub Actions.
+> A completely automated, free proxy list repository. Scraped from public sources, validated, and updated every 1 minute via GitHub Actions.
 
 ---
 
 ## 🚀 Features
 
-* **Automated Updates:** The list is refreshed every **2 hours** automatically.
+* **Automated Updates:** The list is refreshed every **1 minute** automatically.
 * **Multiple Protocols:** Includes HTTP, SOCKS4, and SOCKS5 proxies.
 * **Clean Format:** Proxies are saved in `IP:PORT` format, ready to use in any software.
 * **High Availability:** Hosted on GitHub, ensuring fast and reliable access to the raw text files.
